@@ -1,0 +1,50 @@
+{
+ "steps": 91,
+ "complete": false,
+ "steady_start_step": 200,
+ "shape_rms_m_full": 0.036543155651312234,
+ "shape_rms_m_last_half": 0.02452062259447074,
+ "xpoint_error_m_last_half": 0.017788013219990854,
+ "ip_error_rel_last_half": 0.01540635951116795,
+ "coil_violation_fraction": 0.01098901098901099,
+ "max_shape_rms_m": Infinity,
+ "shape_rms_steady": null,
+ "xpoint_error_steady": null,
+ "ip_error_rel_steady": null,
+ "rin_error_steady": null,
+ "rout_error_steady": null,
+ "zx_error_steady": null,
+ "termination": "solver_failure: ValueError: No O-point in the limiter region. Guess psi_plasma is likely inappropriate.",
+ "feasible": false,
+ "outcome": "solver_failure",
+ "success": false,
+ "kind": "episode",
+ "seed": 1004,
+ "return_diagnostic": -6.4684642349598995,
+ "policy_latency_ms_median": 1.410104101523757,
+ "policy_latency_ms_p95": 1.743641565553844,
+ "null_latency_ms_median": 1.2504840269684792,
+ "policy_compute_ms": 0.22242614068090916,
+ "wall_time_sec": 645.7885908829048,
+ "setup": {
+  "plasma_resistivity": 6.101328958970298e-07,
+  "passive_scale": 0.8251362458060714,
+  "supply_delay_steps": 1,
+  "reset_attempts": 1,
+  "reset_fallback": false,
+  "profile_constraint": "pressure",
+  "drift": {
+   "log_p": -0.3648122927171783,
+   "alpha_n": 0.980443104913426,
+   "log10_eta": -0.08167345336611408
+  },
+  "crashes": [
+   [
+    0.3105,
+    0.261
+   ]
+  ],
+  "dead_channels": 28,
+  "handover_steps": 2
+ }
+}

@@ -1,0 +1,961 @@
+{
+ "algorithm": "Ip-normalized linear field reconstruction with randomized PCA",
+ "rank": 32,
+ "frames": 2393,
+ "train_frames": 2393,
+ "test_frames": 0,
+ "sources": [
+  {
+   "path": "/run-state/workspace/research/data/robust-8004-flux/rec_mastu_diverted_hold_8004.npz",
+   "frames": 700,
+   "used": 175
+  },
+  {
+   "path": "/run-state/workspace/research/data/robust-8004-flux/rec_mastu_high_ip_hold_8004.npz",
+   "frames": 700,
+   "used": 175
+  },
+  {
+   "path": "/run-state/workspace/research/data/robust-8004-flux/rec_mastu_ip_ramp_8004.npz",
+   "frames": 700,
+   "used": 175
+  },
+  {
+   "path": "/run-state/workspace/research/data/robust-8004-flux/rec_mastu_p4_shape_hold_8004.npz",
+   "frames": 420,
+   "used": 105
+  },
+  {
+   "path": "/run-state/workspace/research/data/robust-8004-flux/rec_mastu_pressure_drop_8004.npz",
+   "frames": 700,
+   "used": 175
+  },
+  {
+   "path": "/run-state/workspace/research/data/robust-8004-flux/rec_mastu_sequence_8004.npz",
+   "frames": 1200,
+   "used": 300
+  },
+  {
+   "path": "/run-state/workspace/research/data/robust-8004-flux/rec_mastu_vertical_shift_8004.npz",
+   "frames": 700,
+   "used": 175
+  },
+  {
+   "path": "/run-state/workspace/research/data/static-9101/static_mastu_diverted_hold_9101.npz",
+   "frames": 331,
+   "used": 331
+  },
+  {
+   "path": "/run-state/workspace/research/data/static-9101/static_mastu_high_ip_hold_9102.npz",
+   "frames": 339,
+   "used": 339
+  },
+  {
+   "path": "/run-state/workspace/research/data/static-9101/static_mastu_p4_shape_hold_9103.npz",
+   "frames": 443,
+   "used": 443
+  }
+ ],
+ "new_simulator_steps": 5120,
+ "static_equilibria": 1113,
+ "flux_var": 0.002,
+ "pickup_var": 0.002,
+ "learned_stored_scalars": 420034,
+ "coefficient_count": 156866,
+ "train": {
+  "psi_rms_Wb": 0.0003824095577669255,
+  "core_psi_rms_Wb": 0.0005639495484657718,
+  "zcur_rms_cm": 0.07134971410577556,
+  "pca_residual_Wb": 1.641490340169804e-05
+ },
+ "clean_training_signals": true,
+ "exact_active_coil_basis_modes": 0,
+ "args": {
+  "data": [
+   "research/data/static-9101/static_*.npz",
+   "research/data/robust-8004-flux/rec_*.npz"
+  ],
+  "out": "research/runs/c022-clean-full32/model",
+  "rank": 32,
+  "stride": 4,
+  "flux_var": 0.002,
+  "pickup_var": 0.002,
+  "validation": 0.0,
+  "exact_coil_modes": 0
+ },
+ "wall_s": 2.2499605440025334,
+ "analytic_augmentation": {
+  "active_current_std_A": 2000.0,
+  "passive_current_std_A": 1000.0,
+  "modes": 150,
+  "meaning": "Independent exact vacuum magnetic fields with plasma current distribution held fixed; centroid perturbation is zero.",
+  "new_simulator_steps": 0,
+  "wall_s": 0.062085267003567424,
+  "source": "/run-state/workspace/research/runs/c022-clean-full32/model"
+ },
+ "stored_model_scalars": 559461,
+ "built_utc": "2026-10-17 00:34:53 UTC",
+ "reused_control_attempts": 5120,
+ "new_control_attempts_this_fit": 0,
+ "shared_control": {
+  "shape_startup_steps": 1,
+  "ip_startup_steps": 60,
+  "outer_gain": 150,
+  "reference": "C019"
+ },
+ "hypothesis": "Retain C022 controls and its globally trained clean magnetic field model; fit one shared gap weight to reduce profile-dependent gap/shape conflicts.",
+ "candidate": "C027 clean global reconstruction with explicit gap feedback",
+ "gap_feedback": {
+  "algorithm": "one shared gap scalar grid; actual current-reference clamps propagated700updates",
+  "selected_weight": 8.0,
+  "configurations": 10,
+  "fault_frames": 1632,
+  "excluded_initial_current_limit_frames": 6,
+  "sources": [
+   {
+    "path": "/workspace/research/data/static-9201-check/static_mastu_diverted_hold_9201.npz",
+    "snapshot_frames": 68,
+    "sampled_frames": 68,
+    "used_fault_frames": 42,
+    "kind": "static",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/static-9201-check/static_mastu_high_ip_hold_9202.npz",
+    "snapshot_frames": 65,
+    "sampled_frames": 65,
+    "used_fault_frames": 42,
+    "kind": "static",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/static-9201-check/static_mastu_p4_shape_hold_9203.npz",
+    "snapshot_frames": 87,
+    "sampled_frames": 87,
+    "used_fault_frames": 54,
+    "kind": "static",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/robust-8004-flux/rec_mastu_diverted_hold_8004.npz",
+    "snapshot_frames": 700,
+    "sampled_frames": 64,
+    "used_fault_frames": 189,
+    "kind": "dynamic",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/robust-8004-flux/rec_mastu_high_ip_hold_8004.npz",
+    "snapshot_frames": 700,
+    "sampled_frames": 64,
+    "used_fault_frames": 189,
+    "kind": "dynamic",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/robust-8004-flux/rec_mastu_ip_ramp_8004.npz",
+    "snapshot_frames": 700,
+    "sampled_frames": 64,
+    "used_fault_frames": 189,
+    "kind": "dynamic",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/robust-8004-flux/rec_mastu_p4_shape_hold_8004.npz",
+    "snapshot_frames": 420,
+    "sampled_frames": 64,
+    "used_fault_frames": 183,
+    "kind": "dynamic",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/robust-8004-flux/rec_mastu_pressure_drop_8004.npz",
+    "snapshot_frames": 700,
+    "sampled_frames": 64,
+    "used_fault_frames": 189,
+    "kind": "dynamic",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/robust-8004-flux/rec_mastu_sequence_8004.npz",
+    "snapshot_frames": 1200,
+    "sampled_frames": 64,
+    "used_fault_frames": 192,
+    "kind": "dynamic",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/robust-8004-flux/rec_mastu_vertical_shift_8004.npz",
+    "snapshot_frames": 700,
+    "sampled_frames": 64,
+    "used_fault_frames": 189,
+    "kind": "dynamic",
+    "step_max": null
+   },
+   {
+    "path": "/workspace/research/data/late-pressure-8203/rec_mastu_pressure_drop_8203.npz",
+    "snapshot_frames": 70,
+    "sampled_frames": 64,
+    "used_fault_frames": 180,
+    "kind": "dynamic",
+    "step_max": 690
+   }
+  ],
+  "selection": "minimum source-balanced training loss; validation never selects weights",
+  "training_loss_before": 0.029498973077441985,
+  "training_loss_after": 0.027560885638365874,
+  "validation_loss_before": 0.03471460048155211,
+  "validation_loss_after": 0.02987189976834945,
+  "validation_pass_proxy_before": 0.9665404040404041,
+  "validation_pass_proxy_after": 0.9772727272727273,
+  "new_simulator_steps": 0,
+  "reused_static_derivative_solves": 144,
+  "feature_extraction_wall_s": 3.6491487980019883,
+  "governed_fit_wall_s": 1.58779910299927,
+  "unbounded_preliminary_weight_not_used": 16.0,
+  "feature_sha256": "e36a94c2fe0322befb342af87e1c8799defe659b70adabccb1486e3867bac27d",
+  "analytic_response_check_max_error": 7.061018436615996e-14,
+  "original_C022_control_gain_preserved": 150.0
+ },
+ "conservative_stored_numeric_resource_scalars": 562986,
+ "numeric_resource_counts": {
+  "model.npz": 2953,
+  "gapmap.npz": 552,
+  "field.npz": 559461
+ },
+ "new_training_control_attempts_this_candidate": 0,
+ "reuse_note": "C022 global2393frame magnetic fit reused unchanged; source data and144gap derivative solves reused. No new FreeGSNKE control steps in C027 training.",
+ "publication_selection": {
+  "utc": "2026-10-17 03:43:43 UTC",
+  "reference": "/run-state/workspace/research/runs/c011-coordinated-start",
+  "candidate_total": {
+   "attempts": 42,
+   "successes": 35,
+   "horizons": 38,
+   "voids": 3,
+   "scored": 39
+  },
+  "reference_total": {
+   "attempts": 42,
+   "successes": 29,
+   "horizons": 37,
+   "voids": 1,
+   "scored": 41
+  },
+  "criterion": "complete matched suites; actual per-case successes/horizons do not regress and total actual successes increase"
+ },
+ "subsequent_evidence_refresh": {
+  "utc": "2026-10-17 05:11:03 UTC",
+  "new_parameter_fitting": false,
+  "inference_unchanged": true,
+  "candidate_total": {
+   "attempts": 63,
+   "successes": 48,
+   "horizons": 58,
+   "voids": 3
+  },
+  "reference_total": {
+   "attempts": 63,
+   "successes": 43,
+   "horizons": 56,
+   "voids": 2
+  },
+  "scope": "completed additional exposed-development validation; no sealed result"
+ },
+ "subsequent_evidence_refreshes": [
+  {
+   "utc": "2026-10-17T06:02:58.983225+00:00",
+   "kind": "Evidence-only8501reference-result refresh",
+   "inference_changed": false,
+   "new_fit_steps": 0,
+   "complete_attempts": 21,
+   "actual_successes": 8,
+   "horizons": 12,
+   "voids": 0,
+   "original_results_sha256": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+   "reference_study": "PairedC0579success/12horizons; C057 remains ineligible byvisiblehighIpregression",
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-8501-20261017T060258Z"
+  },
+  {
+   "utc": "2026-10-17T07:17:57.403663+00:00",
+   "kind": "Evidence-only8601reference-result refresh",
+   "inference_changed": false,
+   "new_fit_steps": 0,
+   "complete_attempts": 21,
+   "actual_successes": 11,
+   "horizons": 12,
+   "voids": 2,
+   "original_results_sha256": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+   "reference_study": "Paired frozen C058 ties11success/12horizons; C058 wider old-distribution study still pending",
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-8601-20261017T071757Z"
+  },
+  {
+   "utc": "2026-10-17T07:58:23.922432+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 126,
+    "successes": 78,
+    "horizons": 93,
+    "voids": 7,
+    "scored": 119
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T075823Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T08:45:15.748804+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 126,
+    "successes": 78,
+    "horizons": 93,
+    "voids": 7,
+    "scored": 119
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T084515Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T08:54:33.890359+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 147,
+    "successes": 92,
+    "horizons": 107,
+    "voids": 8,
+    "scored": 139
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T085433Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T10:43:35.544826+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 168,
+    "successes": 108,
+    "horizons": 124,
+    "voids": 11,
+    "scored": 157
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T104335Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T11:23:16.118202+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 189,
+    "successes": 124,
+    "horizons": 140,
+    "voids": 15,
+    "scored": 174
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T112316Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T12:51:20.486619+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 189,
+    "successes": 124,
+    "horizons": 140,
+    "voids": 15,
+    "scored": 174
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T125120Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T13:09:51.196358+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 210,
+    "successes": 140,
+    "horizons": 156,
+    "voids": 17,
+    "scored": 193
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T130951Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T14:59:40.494633+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 231,
+    "successes": 149,
+    "horizons": 165,
+    "voids": 17,
+    "scored": 214
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T145940Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T16:24:51.959522+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-12101-12103",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 252,
+    "successes": 166,
+    "horizons": 182,
+    "voids": 17,
+    "scored": 235
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T162451Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-12101-12103": "af9c60a6cbfa0d6a290bab36a1b39fe352b5ef691bc64e0405b168818a170aea",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T18:13:10.086001+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-12101-12103",
+    "fresh-wide-pressure-12401-12403",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 273,
+    "successes": 177,
+    "horizons": 197,
+    "voids": 18,
+    "scored": 255
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T181309Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-12101-12103": "af9c60a6cbfa0d6a290bab36a1b39fe352b5ef691bc64e0405b168818a170aea",
+    "fresh-wide-pressure-12401-12403": "425d32615522ee9e21be8b0c3099f97ef8068b6c0a7700fe1ae6c2295400c0a6",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-17T20:12:27.433743+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-12101-12103",
+    "fresh-wide-pressure-12401-12403",
+    "fresh-wide-pressure-12501-12503",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 294,
+    "successes": 195,
+    "horizons": 215,
+    "voids": 19,
+    "scored": 275
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261017T201227Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-12101-12103": "af9c60a6cbfa0d6a290bab36a1b39fe352b5ef691bc64e0405b168818a170aea",
+    "fresh-wide-pressure-12401-12403": "425d32615522ee9e21be8b0c3099f97ef8068b6c0a7700fe1ae6c2295400c0a6",
+    "fresh-wide-pressure-12501-12503": "363c416d9ef74d0a11ae077fab8469f3e53cc0dd3f9d9d9135988f4e00814c56",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-18T02:08:00.783301+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-12101-12103",
+    "fresh-wide-pressure-12401-12403",
+    "fresh-wide-pressure-12501-12503",
+    "fresh-wide-pressure-12801-12803",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 315,
+    "successes": 204,
+    "horizons": 229,
+    "voids": 20,
+    "scored": 295
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261018T020800Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-12101-12103": "af9c60a6cbfa0d6a290bab36a1b39fe352b5ef691bc64e0405b168818a170aea",
+    "fresh-wide-pressure-12401-12403": "425d32615522ee9e21be8b0c3099f97ef8068b6c0a7700fe1ae6c2295400c0a6",
+    "fresh-wide-pressure-12501-12503": "363c416d9ef74d0a11ae077fab8469f3e53cc0dd3f9d9d9135988f4e00814c56",
+    "fresh-wide-pressure-12801-12803": "c3a3980e97edd9c4407d80752ee65774e3bed3fa11a1fe6503cce7568093f34d",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-18T05:20:28.887742+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-12101-12103",
+    "fresh-wide-pressure-12401-12403",
+    "fresh-wide-pressure-12501-12503",
+    "fresh-wide-pressure-12801-12803",
+    "fresh-wide-pressure-12901-12903",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 336,
+    "successes": 218,
+    "horizons": 244,
+    "voids": 23,
+    "scored": 313
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261018T052028Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-12101-12103": "af9c60a6cbfa0d6a290bab36a1b39fe352b5ef691bc64e0405b168818a170aea",
+    "fresh-wide-pressure-12401-12403": "425d32615522ee9e21be8b0c3099f97ef8068b6c0a7700fe1ae6c2295400c0a6",
+    "fresh-wide-pressure-12501-12503": "363c416d9ef74d0a11ae077fab8469f3e53cc0dd3f9d9d9135988f4e00814c56",
+    "fresh-wide-pressure-12801-12803": "c3a3980e97edd9c4407d80752ee65774e3bed3fa11a1fe6503cce7568093f34d",
+    "fresh-wide-pressure-12901-12903": "3692b4a4b6ee9edd1c8bfd808693862814f9ff57c4c577158dc4c3d613780ae5",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-18T10:36:00.532931+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-12101-12103",
+    "fresh-wide-pressure-12401-12403",
+    "fresh-wide-pressure-12501-12503",
+    "fresh-wide-pressure-12801-12803",
+    "fresh-wide-pressure-12901-12903",
+    "fresh-wide-pressure-13201-13203",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 357,
+    "successes": 229,
+    "horizons": 257,
+    "voids": 23,
+    "scored": 334
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261018T103600Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-12101-12103": "af9c60a6cbfa0d6a290bab36a1b39fe352b5ef691bc64e0405b168818a170aea",
+    "fresh-wide-pressure-12401-12403": "425d32615522ee9e21be8b0c3099f97ef8068b6c0a7700fe1ae6c2295400c0a6",
+    "fresh-wide-pressure-12501-12503": "363c416d9ef74d0a11ae077fab8469f3e53cc0dd3f9d9d9135988f4e00814c56",
+    "fresh-wide-pressure-12801-12803": "c3a3980e97edd9c4407d80752ee65774e3bed3fa11a1fe6503cce7568093f34d",
+    "fresh-wide-pressure-12901-12903": "3692b4a4b6ee9edd1c8bfd808693862814f9ff57c4c577158dc4c3d613780ae5",
+    "fresh-wide-pressure-13201-13203": "d85e3b3b7b2f8cb7592e2be46eeba87571459b18c34c2f1f6c00bf63dbdd73a7",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-18T14:49:42.369624+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-12101-12103",
+    "fresh-wide-pressure-12401-12403",
+    "fresh-wide-pressure-12501-12503",
+    "fresh-wide-pressure-12801-12803",
+    "fresh-wide-pressure-12901-12903",
+    "fresh-wide-pressure-13201-13203",
+    "fresh-wide-pressure-14301-14303",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 378,
+    "successes": 242,
+    "horizons": 273,
+    "voids": 25,
+    "scored": 353
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261018T144942Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-12101-12103": "af9c60a6cbfa0d6a290bab36a1b39fe352b5ef691bc64e0405b168818a170aea",
+    "fresh-wide-pressure-12401-12403": "425d32615522ee9e21be8b0c3099f97ef8068b6c0a7700fe1ae6c2295400c0a6",
+    "fresh-wide-pressure-12501-12503": "363c416d9ef74d0a11ae077fab8469f3e53cc0dd3f9d9d9135988f4e00814c56",
+    "fresh-wide-pressure-12801-12803": "c3a3980e97edd9c4407d80752ee65774e3bed3fa11a1fe6503cce7568093f34d",
+    "fresh-wide-pressure-12901-12903": "3692b4a4b6ee9edd1c8bfd808693862814f9ff57c4c577158dc4c3d613780ae5",
+    "fresh-wide-pressure-13201-13203": "d85e3b3b7b2f8cb7592e2be46eeba87571459b18c34c2f1f6c00bf63dbdd73a7",
+    "fresh-wide-pressure-14301-14303": "67678c6073f3072e0690858cd4396802068403a539c1f8a25bb04d41e6a118f6",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  },
+  {
+   "utc": "2026-10-18T18:29:15.770518+00:00",
+   "kind": "Evidence-only completed original draw catalogue",
+   "inference_changed": false,
+   "new_training_steps": 0,
+   "complete_draws": [
+    "dev-visible-0-2",
+    "fresh-wide-pressure-10901-10903",
+    "fresh-wide-pressure-11501-11503",
+    "fresh-wide-pressure-12101-12103",
+    "fresh-wide-pressure-12401-12403",
+    "fresh-wide-pressure-12501-12503",
+    "fresh-wide-pressure-12801-12803",
+    "fresh-wide-pressure-12901-12903",
+    "fresh-wide-pressure-13201-13203",
+    "fresh-wide-pressure-13901-13903",
+    "fresh-wide-pressure-14301-14303",
+    "fresh-wide-pressure-8401-8403",
+    "fresh-wide-pressure-8501-8503",
+    "fresh-wide-pressure-8601-8603",
+    "fresh-wide-pressure-8701-8703",
+    "fresh-wide-pressure-8801-8803",
+    "fresh-wide-pressure-8901-8903",
+    "fresh-wide-pressure-9001-9003",
+    "wide-pressure-8201-8203"
+   ],
+   "all_completed_actual_counts": {
+    "attempts": 399,
+    "successes": 258,
+    "horizons": 291,
+    "voids": 28,
+    "scored": 371
+   },
+   "prepared": "/workspace/research/runs/c027-clean-gap/publication-evidence-catalogue-20261018T182915Z",
+   "original_result_sha256": {
+    "dev-visible-0-2": "81ca93107c41bb0cd5c36649a1077932cc2101c6d4fada8c7ce65a205dedad79",
+    "fresh-wide-pressure-10901-10903": "4de88ea77ea9f21d239184c8a1b91185b671061f4ef18d0846c5b4b0028978de",
+    "fresh-wide-pressure-11501-11503": "981248db6d26c0608c933ca03527d36d7abb0351fe9dd809b8eb6555c092ed67",
+    "fresh-wide-pressure-12101-12103": "af9c60a6cbfa0d6a290bab36a1b39fe352b5ef691bc64e0405b168818a170aea",
+    "fresh-wide-pressure-12401-12403": "425d32615522ee9e21be8b0c3099f97ef8068b6c0a7700fe1ae6c2295400c0a6",
+    "fresh-wide-pressure-12501-12503": "363c416d9ef74d0a11ae077fab8469f3e53cc0dd3f9d9d9135988f4e00814c56",
+    "fresh-wide-pressure-12801-12803": "c3a3980e97edd9c4407d80752ee65774e3bed3fa11a1fe6503cce7568093f34d",
+    "fresh-wide-pressure-12901-12903": "3692b4a4b6ee9edd1c8bfd808693862814f9ff57c4c577158dc4c3d613780ae5",
+    "fresh-wide-pressure-13201-13203": "d85e3b3b7b2f8cb7592e2be46eeba87571459b18c34c2f1f6c00bf63dbdd73a7",
+    "fresh-wide-pressure-13901-13903": "fde9e073b32132b8605feb559ae22827a3acd6e6632daf0c7b86b69c4190f55c",
+    "fresh-wide-pressure-14301-14303": "67678c6073f3072e0690858cd4396802068403a539c1f8a25bb04d41e6a118f6",
+    "fresh-wide-pressure-8401-8403": "3875ddb2dfdd361d61b2de0eb5f59fc537796a11c68736d28dc9c60778979d91",
+    "fresh-wide-pressure-8501-8503": "89142ee5db1053e5fceaa688d66dcad0cd3f7ce08a0856d934d44a6593fe6c6f",
+    "fresh-wide-pressure-8601-8603": "bb68785777621b36854478f128107cc3676490cbcfd630ab842a27f219d9e66b",
+    "fresh-wide-pressure-8701-8703": "2cad4072c693973f5974c457d9da1e68a2bfea1a2f939d981259549038f6b6f1",
+    "fresh-wide-pressure-8801-8803": "d51b35e002b346f2b0f44d3b039fa4b2a5cdf68731c9dc559376bda3dfa402ea",
+    "fresh-wide-pressure-8901-8903": "c782648557d66977e9de99702fa9fd823251fb8966f435b2861587622213094a",
+    "fresh-wide-pressure-9001-9003": "707051399450fc5990f9ec120dbbf08aa535d116fbc8dd2cf831900836f81552",
+    "wide-pressure-8201-8203": "7f8f6549bb2155d9fd6e0fbcc90221b437caa614c486c8a4a65b6016cf18c0c9"
+   }
+  }
+ ]
+}

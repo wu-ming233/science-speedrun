@@ -1,0 +1,50 @@
+{
+ "steps": 371,
+ "complete": false,
+ "steady_start_step": 400,
+ "shape_rms_m_full": 0.03866363104610168,
+ "shape_rms_m_last_half": 0.049444634167820765,
+ "xpoint_error_m_last_half": 0.03640412394010088,
+ "ip_error_rel_last_half": 0.03727471644604768,
+ "coil_violation_fraction": 0.0026954177897574125,
+ "max_shape_rms_m": Infinity,
+ "shape_rms_steady": null,
+ "xpoint_error_steady": null,
+ "ip_error_rel_steady": null,
+ "rin_error_steady": null,
+ "rout_error_steady": null,
+ "zx_error_steady": null,
+ "termination": "solver_failure: StepTimeout: exceeded 180s wall-clock budget",
+ "feasible": false,
+ "outcome": "solver_failure",
+ "success": false,
+ "kind": "episode",
+ "seed": 1004,
+ "return_diagnostic": -24.07576707974569,
+ "policy_latency_ms_median": 1.4675739221274853,
+ "policy_latency_ms_p95": 2.452835440635681,
+ "null_latency_ms_median": 1.213299110531807,
+ "policy_compute_ms": 0.3316637594252825,
+ "wall_time_sec": 1937.1625645449385,
+ "setup": {
+  "plasma_resistivity": 6.052742848936702e-07,
+  "passive_scale": 0.879766822958027,
+  "supply_delay_steps": 2,
+  "reset_attempts": 2,
+  "reset_fallback": false,
+  "profile_constraint": "pressure",
+  "drift": {
+   "log_p": -0.3648122927171783,
+   "alpha_n": 0.980443104913426,
+   "log10_eta": -0.08167345336611408
+  },
+  "crashes": [
+   [
+    0.3105,
+    0.261
+   ]
+  ],
+  "dead_channels": 28,
+  "handover_steps": 2
+ }
+}

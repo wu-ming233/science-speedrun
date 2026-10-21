@@ -105,6 +105,11 @@ Notes on the table:
   package on 40 CPUs (35 parallel episodes). Repeated scoring of one package varies by about 0.015 (P4 void
   episodes), so a one-episode difference from the baseline is within noise.
 
+## Completed research runs
+
+Completed research runs and their original sealed evaluation outputs are saved
+in [results/](results/).
+
 ## Quick start
 
 ```bash

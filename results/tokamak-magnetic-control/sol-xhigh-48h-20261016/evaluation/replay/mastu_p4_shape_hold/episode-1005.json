@@ -1,0 +1,50 @@
+{
+ "steps": 700,
+ "complete": true,
+ "steady_start_step": 200,
+ "shape_rms_m_full": 0.0073823467066329385,
+ "shape_rms_m_last_half": 0.006515402516237177,
+ "xpoint_error_m_last_half": 0.004602552768023772,
+ "ip_error_rel_last_half": 0.0020190757441384895,
+ "coil_violation_fraction": 0.0,
+ "max_shape_rms_m": 0.03485533460633716,
+ "shape_rms_steady": 0.006975954502257805,
+ "xpoint_error_steady": 0.005053779240727911,
+ "ip_error_rel_steady": 0.002955955553335083,
+ "rin_error_steady": 0.007000304449233769,
+ "rout_error_steady": 0.010207358555895791,
+ "zx_error_steady": 0.0031714420705667764,
+ "termination": null,
+ "feasible": true,
+ "outcome": "kept",
+ "success": false,
+ "kind": "episode",
+ "seed": 1005,
+ "return_diagnostic": 537.2389404484168,
+ "policy_latency_ms_median": 1.315871486440301,
+ "policy_latency_ms_p95": 1.6638998989947138,
+ "null_latency_ms_median": 1.1609999928623438,
+ "policy_compute_ms": 0.14843360986560583,
+ "wall_time_sec": 3752.78988346993,
+ "setup": {
+  "plasma_resistivity": 5.310687568299739e-07,
+  "passive_scale": 1.1153086244412715,
+  "supply_delay_steps": 2,
+  "reset_attempts": 1,
+  "reset_fallback": false,
+  "profile_constraint": "pressure",
+  "drift": {
+   "log_p": 0.57465235205747,
+   "alpha_n": 0.17462710674105522,
+   "log10_eta": -0.20042808283098182
+  },
+  "crashes": [
+   [
+    0.1018,
+    0.263
+   ]
+  ],
+  "dead_channels": 24,
+  "handover_steps": 13
+ }
+}
